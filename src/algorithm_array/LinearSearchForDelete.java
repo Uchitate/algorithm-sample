@@ -23,16 +23,14 @@ public class LinearSearchForDelete {
 			}
 		}
 
-		if (deleteElementNum != null && deleteElementNum != sampleArray.length - 1) {
-			for (int i = deleteElementNum; i < sampleArray.length; i++) {
-				if (i != sampleArray.length - 1) {
-					sampleArray[i] = sampleArray[i + 1];
-				} else {
-					sampleArray[i] = -999;
+		if (deleteElementNum != null) {
+			if (deleteElementNum != sampleArray.length - 1) {
+				for (int i = deleteElementNum; i < sampleArray.length; i++) {
+					sampleArray[i] = i != sampleArray.length - 1 ? sampleArray[i + 1] : -999;
 				}
+			} else {
+				sampleArray[deleteElementNum] = -999;
 			}
-		} else {
-			sampleArray[deleteElementNum] = -999;
 		}
 
 		for (int i = 0; i < sampleArray.length; i++) {
